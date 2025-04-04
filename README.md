@@ -1,13 +1,9 @@
 ### ***AESTHETIC TERMINAL BASED MINESWEEPER GAME THAT SUPPORTS MOUSE CLICKS FOR GAMEPLAY***
 ---
 
-<img align="left" width="420" alt="clock" src="https://github.com/user-attachments/assets/8e4d1f2f-e2b3-49b2-ae9f-a5793dcc65de" />
-<img align="right" width="550" alt="clock" src="https://github.com/user-attachments/assets/23e32b19-6b88-4b9c-a223-6707dddbb9fb" />
-
-&nbsp;
-
-&nbsp;
-
+<img height="220" align="top" alt="clock" src="https://github.com/user-attachments/assets/8e4d1f2f-e2b3-49b2-ae9f-a5793dcc65de" /> &nbsp;
+<img height="280"  alt="clock" src="https://github.com/user-attachments/assets/23e32b19-6b88-4b9c-a223-6707dddbb9fb" />
+  
 ![game themes](https://github.com/user-attachments/assets/3c507a68-b6a9-493a-ae23-a3b722338aa5)
 
 ![custom board](https://github.com/user-attachments/assets/e22c2180-216a-4d1b-9555-a157ce28b5e5)
