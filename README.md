@@ -2,10 +2,10 @@
 ---
 
 
-<img height="200"  align="top" alt="clock" src="https://github.com/user-attachments/assets/8e4d1f2f-e2b3-49b2-ae9f-a5793dcc65de" />
+<img height="150"  align="top" alt="clock" src="https://github.com/user-attachments/assets/8e4d1f2f-e2b3-49b2-ae9f-a5793dcc65de" />
 
 
-<img height="250" align='right' alt="clock" src="https://github.com/user-attachments/assets/23e32b19-6b88-4b9c-a223-6707dddbb9fb" />
+<img height="200" align='right' alt="clock" src="https://github.com/user-attachments/assets/23e32b19-6b88-4b9c-a223-6707dddbb9fb" />
 
 &nbsp;
 
