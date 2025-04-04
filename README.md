@@ -1,24 +1,19 @@
+### ***AESTHETIC TERMINAL BASED MINESWEEPER GAME THAT SUPPORTS MOUSE CLICKS FOR GAMEPLAY***
+---
 
-![OS support](https://img.shields.io/badge/OS-macOS%20Linux%20Windows-red)
+<img align="left" width="420" alt="clock" src="https://github.com/user-attachments/assets/8e4d1f2f-e2b3-49b2-ae9f-a5793dcc65de" />
+<img align="right" width="550" alt="clock" src="https://github.com/user-attachments/assets/23e32b19-6b88-4b9c-a223-6707dddbb9fb" />
 
+&nbsp;
 
+&nbsp;
 
-███╗░░░███╗██╗███╗░░██╗███████╗██╗░░██╗
-████╗░████║██║████╗░██║██╔════╝╚██╗██╔╝
-██╔████╔██║██║██╔██╗██║█████╗░░░╚███╔╝░
-██║╚██╔╝██║██║██║╚████║██╔══╝░░░██╔██╗░
-██║░╚═╝░██║██║██║░╚███║███████╗██╔╝╚██╗
-╚═╝░░░░░╚═╝╚═╝╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝
+![game themes](https://github.com/user-attachments/assets/3c507a68-b6a9-493a-ae23-a3b722338aa5)
 
-
-# MINEX
-
-An aesthetic terminal-based Minesweeper game that supports **mouse clicks for gameplay**!
-
-![Minesweeper TUI Demo](demo.gif)
+![custom board](https://github.com/user-attachments/assets/e22c2180-216a-4d1b-9555-a157ce28b5e5)
 
 ## Features
-- **Mouse support**: reveal, flag and chord using mouse
+- 🖱️ **Mouse support**: reveal, flag and chord using mouse
 - 🎮 **Multiple Game Modes**: Easy, Medium, Expert, and Custom levels
 - 🎨 **Themes**: Choose from 5 unique themes (Default, Winter, Desert, Space, Cyberpunk)
 - 🎵 **Sound Effects**: Toggle sound on/off for an immersive experience
@@ -33,58 +28,27 @@ An aesthetic terminal-based Minesweeper game that supports **mouse clicks for ga
 
 Download the latest executable from the [releases page](https://github.com/your-username/minesweeper-tui/releases).
 
-```bash
-# Run directly
-minex     
-````
-
 ### Option 2: Install with pipx (Recommended)
 
-```bash
-# Install pipx if you don't have it
+if you dont have pipx installed then install via: 
+
+```console
 pip install pipx
+```
+
+```console
 pipx install minex
-
-# Run the game
-minex
 ```
-
-### Option 3: Install from source
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/minesweeper-tui.git
-cd minesweeper-tui
-
-# Install dependencies
-pip install -e .
-
-# Run the game
-mines
-```
-         |
-
-## Screenshots
-
-![Default Theme](screenshots/default.png)
-![Winter Theme](screenshots/winter.png)
-![Custom Board](screenshots/custom.png)
-
-## Video Demo
-
-[Watch the gameplay demonstration video](https://youtu.be/your-video-id)
+after installing, you can play the game by running command minex in your terminal
 
 ## Built With
-
-- [Python](https://www.python.org/)
 - [Textual](https://textual.textualize.io/) - TUI Framework
 - [Pygame](https://www.pygame.org/) - Audio Support
+
+## Compatibility
+
+minex runs on Linux, macOS, and Windows. minex requires Python 3.8 or above.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Created by [libin-codes](https://github.com/your-username)
-- All the Minesweeper enthusiasts out there 💣
