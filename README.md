@@ -1,4 +1,4 @@
-### ***TERMINAL BASED MINESWEEPER GAME WITH FULL MOUSE SUPPORT !***
+### ***💣 TERMINAL BASED MINESWEEPER GAME WITH FULL MOUSE SUPPORT !***
 ---
 
 https://github.com/user-attachments/assets/0c8e987a-bba2-48a6-b74c-c3b6b1a4fe8c
@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/0c8e987a-bba2-48a6-b74c-c3b6b1a4fe8c
 - 📦 **Lightweight**: Requires minimal storage space without compromising on quality
 - ⚡ **High Performance**: Smooth and fast gameplay even on low-end systems
 
-## Installation
+## ⬇️ Installation
 
 ### Option 1: Standalone Executable
 
