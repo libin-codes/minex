@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/0c8e987a-bba2-48a6-b74c-c3b6b1a4fe8c
 
 ### Option 1: Standalone Executable
 
-Download the latest executable from the [releases page](https://github.com/your-username/minesweeper-tui/releases).
+Download the latest executable from the [releases page](https://github.com/libin-codes/minex/releases).
 
 ### Option 2: Install with pipx (Recommended)
 
