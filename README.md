@@ -12,7 +12,6 @@ https://github.com/user-attachments/assets/0c8e987a-bba2-48a6-b74c-c3b6b1a4fe8c
 - 🎮 **Multiple Game Modes**: Easy, Medium, Expert, and Custom levels
 - 🎨 **Themes**: Choose from 5 unique themes (Default, Winter, Desert, Space, Cyberpunk)
 - 🎵 **Sound Effects**: Toggle sound on/off for an immersive experience
-
 - 📊 **Game Statistics**: Track your win streak, best time, and win rate
 - ⚙️ **Customization**: Configure chording method (disabled, left-click, middle-click, right-click)
 - 💾 **Persistent Settings**: Your preferences are saved between sessions
