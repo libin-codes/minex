@@ -35,13 +35,17 @@ pipx install minex
 ```
 after installing, you can play the game by running command minex in your terminal
 
+```console
+minex
+```
+
 ## Built With
 - [Textual](https://textual.textualize.io/) - TUI Framework
 - [Pygame](https://www.pygame.org/) - Audio Support
 
 ## Compatibility
 
-minex runs on Linux, macOS, and Windows. minex requires Python 3.8 or above.
+minex runs on Linux, macOS, and Windows. minex requires Python 3.9 or above.
 
 ## License
 
