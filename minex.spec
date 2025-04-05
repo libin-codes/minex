@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['src\\minesweeper.py'],
+    ['minex\\main.py'],
     pathex=[],
     binaries=[],
-    datas=[('src/sounds', 'sounds')],
+    datas=[('minex/sounds', 'sounds')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
