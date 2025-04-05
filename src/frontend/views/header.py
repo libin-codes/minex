@@ -1,7 +1,8 @@
-from typing import Literal
+
+from typing import Literal, Union
 from textual.widget import Widget
 from textual.containers import Horizontal
-from textual.widgets import Static,Button
+from textual.widgets import Static,Button,Label
 from constants import *
 from game_events import *
 class GameHeader(Widget):
@@ -47,20 +48,9 @@ class GameHeader(Widget):
         opacity: 50%;
     }
 
-    #stats-container{
-        height:1;
-        width:100%;
-  
-    }
-    #custom-board-button-container{
-        height:auto;
-        width:auto;
-        layer: above;
-        position: absolute;
-        dock: right;
-    }
     #custom-board-button{
-        
+       
+        dock: right;
         height: 1;
         min-width: 1;
         content-align: center middle;
@@ -81,43 +71,56 @@ class GameHeader(Widget):
             tint: transparent;
         }
     }
+
+    #game-board-title{
+        offset:-3 0;
+        text-style: bold;
+        color: $text;
+        opacity: 50%;
+    }
     """
 
     def compose(self):
-        with Horizontal(id='stats-container'):
-            with Horizontal(id="left-header"):
-                yield Static(classes="header-label-left", id="win_streak")
-                yield Static(classes="header-label-left", id="win_rate")
-                yield Static(classes="header-label-left", id="best_time")
-            with Horizontal(id="right-header"):
-                yield Static(classes="header-label-right", id="games_played")
-                yield Static(classes="header-label-right", id="games_won")
-                yield Static(classes="header-label-right", id="games_lost")
-                
-        with Horizontal(id="custom-board-button-container"):
-            yield Button('🔃 CHANGE SIZE',id='custom-board-button')
+        
+       
+        with Horizontal(id="left-header"):
+            yield Static(classes="header-label-left", id="win_streak")
+            yield Static(classes="header-label-left", id="win_rate")
+            yield Static(classes="header-label-left", id="best_time")
+        with Horizontal(id="right-header"):
+            yield Static(classes="header-label-right", id="games_played")
+            yield Static(classes="header-label-right", id="games_won")
+            yield Static(classes="header-label-right", id="games_lost")
 
-    def init_view(self,stats=None):
+        yield Label('MINESWEEPER 16X16',id='game-board-title')
+        yield Button('🔃 CHANGE SIZE',id='custom-board-button')
+
+    def init_view(self,game_level,is_custom_game,stats:Union[GameStat,None]=None):
         if stats:
             self.update_header('default')
             self.refresh_stats(stats)
         else:
             self.update_header('custom')
 
+        self.update_game_board_title(game_level)
+
+        if is_custom_game:
+            self.query_one('#game-board-title').offset = (3,0)
+
     def update_header(self,state:Literal['default','custom','hide']):
         if state == 'default':
-            self.app.query_one('#stats-container').visible = True
-            self.query_one('#custom-board-button-container').visible = False
-            self.query_one('#stats-container').visible = True
+            self.query_one('#left-header').visible = True
+            self.query_one('#right-header').visible = True
+            self.query_one('#custom-board-button').visible = False
+      
         elif state == 'custom':
-            self.app.query_one('#stats-container').visible = True
-            self.query_one('#custom-board-button-container').visible = True
-            self.query_one('#stats-container').visible = False
-        elif state == 'hide':
-            self.app.query_one('#stats-container').visible = False
+            self.query_one('#left-header').visible = False
+            self.query_one('#right-header').visible = False
+            self.query_one('#custom-board-button').visible = True
 
+    
     @staticmethod
-    def format_time(seconds: int | None) -> str:
+    def format_time(seconds: Union[int , None]) -> str:
         if seconds:
             minutes, sec = divmod(seconds, 60)
             return f"{minutes}m {sec}s" if minutes else f"{sec}s"
@@ -133,10 +136,13 @@ class GameHeader(Widget):
                 label.tooltip ="[dim]LONGEST WINNING STREAK:"+streak
             elif label.id == "best_time":
                 label.tooltip ="[dim]PREVIOUS TIME:"+best_time
-            label.update(stat_view_template[label.id].format(stats[label.id]))
+            if label.id != 'game-board-title':
+                label.update(stat_view_template[label.id].format(stats[label.id]))
 
 
     def on_game_level_changed(self,message:GameLevelChanged):
+        if self.query_one('#game-board-title').offset == (3,0):
+            self.query_one('#game-board-title').offset = (-3,0)
         if not message.settings.is_custom_game:
             self.update_header('default')
             self.refresh_stats(message.statistics[message.engine.level])
@@ -148,5 +154,6 @@ class GameHeader(Widget):
             self.refresh_stats(message.statistics[message.settings.game_level])
 
 
+    def update_game_board_title(self,game_level:GameLevel):
+        self.query_one('#game-board-title',Label).update(GAME_TITLE_TEMPLATE.format(*game_level))
 
-    

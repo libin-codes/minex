@@ -1,3 +1,4 @@
+from typing import Union
 from textual.widgets import Static
 from textual.reactive import reactive
 from textual.events import MouseDown, MouseUp, Click
@@ -39,7 +40,7 @@ Cell{
 
 class Cell(Static):
     class Interaction(Message):
-        def __init__(self, cell, event: MouseDown | MouseUp | Click):
+        def __init__(self, cell, event:Union[ MouseDown , MouseUp , Click]):
             super().__init__()
             self.cell = cell
             self.event = event

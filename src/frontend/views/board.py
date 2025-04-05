@@ -7,7 +7,6 @@ from frontend.custom_widgets.time_display import TimeDisplay
 from frontend.views.cell import Cell
 from game_events import *
 from constants import GameState
-import asyncio
 
 
 from typing import Literal

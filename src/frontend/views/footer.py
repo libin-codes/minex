@@ -1,4 +1,6 @@
 from textual.widget import Widget
+from textual.widgets import Label
+from backend.game_settings import SettingsManager
 from frontend.custom_widgets.select_button import SelectButton
 from frontend.custom_widgets.toggle_button import ToggleButton
 from constants import GameLevel
@@ -16,6 +18,7 @@ class GameFooter(Widget):
         color: $foreground;
         dock:bottom;
         layout:horizontal;
+        align:center middle;
     }
     #select-button-container{
         width:auto;
@@ -27,6 +30,12 @@ class GameFooter(Widget):
         height:auto;
         dock:right;
     }
+    #creator-title{
+        offset:-1 0;
+        text-style: bold;
+        color: $text;
+        opacity: 50%;
+    }
         
     """
 
@@ -37,6 +46,8 @@ class GameFooter(Widget):
         with Horizontal(id='toggle-button-container'):
             yield ToggleButton(id='chord-button')
             yield ToggleButton(id='sound-button')
+
+        yield Label('libin-codes',id='creator-title')
 
     def init_mode_button(self,game_level,is_custom_game):
         mode_button = self.query_one('#mode-button',SelectButton)
@@ -67,11 +78,11 @@ class GameFooter(Widget):
         sound_button.selection_list = ["🔊","🔇"]
         sound_button.selection = '🔊' if sound_setting else '🔇'
      
-    def init_view(self,game_level,is_custom_game,theme_name,chord_setting,sound_setting):
-        self.init_mode_button(game_level,is_custom_game)
+    def init_view(self,settings:SettingsManager,theme_name:str):
+        self.init_mode_button(settings.game_level,settings.is_custom_game)
         self.init_theme_button(theme_name)
-        self.init_chord_button(chord_setting)
-        self.init_sound_button(sound_setting)
+        self.init_chord_button(Chording(settings.chording).name)
+        self.init_sound_button(settings.game_sound)
 
 
     def on_screen_changed(self,message:ScreenChanged):

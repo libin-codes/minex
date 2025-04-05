@@ -110,14 +110,13 @@ class CustomBoard(ModalScreen):
         )
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
-        match event.button.id:
-            case "confirm_button":
-                x_input = self.query_one("#input_x", Input)
-                y_input = self.query_one("#input_y", Input)
-                mines_input = self.query_one("#input_mines", Input)
-                self.dismiss(
-                    (int(x_input.value), int(y_input.value), int(mines_input.value))
-                )
+        if event.button.id == "confirm_button":
+            x_input = self.query_one("#input_x", Input)
+            y_input = self.query_one("#input_y", Input)
+            mines_input = self.query_one("#input_mines", Input)
+            self.dismiss(
+                (int(x_input.value), int(y_input.value), int(mines_input.value))
+            )
 
     def on_mount(self) -> None:
         # Set focus on the X input when the modal appears.
@@ -155,36 +154,35 @@ class CustomBoard(ModalScreen):
 
     def on_input_changed(self, event: Input.Changed) -> None:
         mines_input = self.query_one("#input_mines", Input)
-        match event.input.id:
-            case "input_x":
-                if event.validation_result.is_valid:
-                    self.x_input_valid = True
-                else:
-                    self.x_input_valid = False
-                    self.disable_mine_input()
-            case "input_y":
-                if event.validation_result.is_valid:
-                    self.y_input_valid = True
-                else:
-                    self.y_input_valid = False
-                    mines_input.disabled = True
-                    self.disable_mine_input()
-            case "input_mines":
-                if event.validation_result.is_valid:
-                    self.query_one("#confirm_button").disabled = False
-                else:
-                    self.query_one("#confirm_button").disabled = True
+       
+        if event.input.id == "input_x":
+            if event.validation_result.is_valid:
+                self.x_input_valid = True
+            else:
+                self.x_input_valid = False
+                self.disable_mine_input()
+        elif event.input.id == "input_y":
+            if event.validation_result.is_valid:
+                self.y_input_valid = True
+            else:
+                self.y_input_valid = False
+                mines_input.disabled = True
+                self.disable_mine_input()
+        elif event.input.id == "input_mines":
+            if event.validation_result.is_valid:
+                self.query_one("#confirm_button").disabled = False
+            else:
+                self.query_one("#confirm_button").disabled = True
         if self.x_input_valid and self.y_input_valid:
             self.enable_mine_input()
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
-        match event.button.id:
-            case "confirm_button":
-                x_input = int(self.query_one("#input_x", Input).value)
-                y_input = int(self.query_one("#input_y", Input).value)
-                mines_input = int(self.query_one("#input_mines", Input).value)
-                level = (x_input, y_input, mines_input)
-                self.dismiss(level)
+        if event.button.id == "confirm_button":
+            x_input = int(self.query_one("#input_x", Input).value)
+            y_input = int(self.query_one("#input_y", Input).value)
+            mines_input = int(self.query_one("#input_mines", Input).value)
+            level = (x_input, y_input, mines_input)
+            self.dismiss(level)
 
     def action_dismiss(self) -> None:
 

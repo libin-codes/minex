@@ -143,22 +143,22 @@ class GameEngine:
             self.moves += 1
             self._handle_first_move(x, y)
             return self._revealed_count - revealed_before
-
-        match move:
-            case Move.REVEAL:
-                self._reveal_cell(x, y)
-                cells_revealed = self._revealed_count - revealed_before
-                if cells_revealed:
-                    self.moves += 1
-                return cells_revealed
-            case Move.CHORD:
-                self._chord_cell(x, y)
-                cells_revealed = self._revealed_count - revealed_before
-                if cells_revealed:
-                    self.moves += 1
-                return cells_revealed
-            case Move.FLAG:
-                return self._flag_cell(x, y)
+        
+    
+        if move == Move.REVEAL:
+            self._reveal_cell(x, y)
+            cells_revealed = self._revealed_count - revealed_before
+            if cells_revealed:
+                self.moves += 1
+            return cells_revealed
+        elif move == Move.CHORD:
+            self._chord_cell(x, y)
+            cells_revealed = self._revealed_count - revealed_before
+            if cells_revealed:
+                self.moves += 1
+            return cells_revealed
+        elif move == Move.FLAG:
+            return self._flag_cell(x, y)
 
     def reset(self, new_level: GameLevel = None) -> None:
         """Reset the game with optional new level."""
