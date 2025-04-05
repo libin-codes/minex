@@ -292,5 +292,4 @@ class MineSweeper(App):
 def run():
     app = MineSweeper()
     app.run()
-
-
+run()
