@@ -1,6 +1,6 @@
 [project]
 name = "minex"
-version = "0.1.0"
+version = "1.0.0"
 description = "AESTHETIC TERMINAL BASED MINESWEEPER GAME THAT SUPPORTS MOUSE CLICKS FOR GAMEPLAY"
 authors = [
     {name = "Libin Lalu",email = "libinlalu000@gmail.com"}
