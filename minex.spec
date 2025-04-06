@@ -5,7 +5,7 @@ a = Analysis(
     ['minex\\main.py'],
     pathex=[],
     binaries=[],
-    datas=[('minex/sounds', 'sounds')],
+    datas=[('minex/sounds', 'minex/sounds')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
